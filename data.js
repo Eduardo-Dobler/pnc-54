@@ -78,33 +78,13 @@ window.PNC_DATA = {
         "cargo": "Integrante do PNC",
         "area": "Equipe do projeto",
         "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
-        "avatar": "assets/people/integrante-02.webp",
-        "miniatura": "assets/people/integrante-02-small.webp",
-        "x": "50%",
-        "y": "20%"
-    },
-    {
-        "nome": "Integrante 03",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
-        "avatar": "assets/people/integrante-03.webp",
-        "miniatura": "assets/people/integrante-03-small.webp",
-        "x": "50%",
-        "y": "20%"
-    },
-    {
-        "nome": "Integrante 04",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
         "avatar": "assets/people/integrante-04.webp",
         "miniatura": "assets/people/integrante-04-small.webp",
         "x": "50%",
         "y": "20%"
     },
     {
-        "nome": "Integrante 05",
+        "nome": "Integrante 03",
         "cargo": "Integrante do PNC",
         "area": "Equipe do projeto",
         "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
@@ -114,7 +94,7 @@ window.PNC_DATA = {
         "y": "20%"
     },
     {
-        "nome": "Integrante 06",
+        "nome": "Integrante 04",
         "cargo": "Integrante do PNC",
         "area": "Equipe do projeto",
         "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
@@ -124,7 +104,7 @@ window.PNC_DATA = {
         "y": "20%"
     },
     {
-        "nome": "Integrante 07",
+        "nome": "Integrante 05",
         "cargo": "Integrante do PNC",
         "area": "Equipe do projeto",
         "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
@@ -134,7 +114,7 @@ window.PNC_DATA = {
         "y": "20%"
     },
     {
-        "nome": "Integrante 08",
+        "nome": "Integrante 06",
         "cargo": "Integrante do PNC",
         "area": "Equipe do projeto",
         "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
@@ -144,7 +124,7 @@ window.PNC_DATA = {
         "y": "20%"
     },
     {
-        "nome": "Integrante 09",
+        "nome": "Integrante 07",
         "cargo": "Integrante do PNC",
         "area": "Equipe do projeto",
         "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
@@ -154,7 +134,7 @@ window.PNC_DATA = {
         "y": "20%"
     },
     {
-        "nome": "Integrante 10",
+        "nome": "Integrante 08",
         "cargo": "Integrante do PNC",
         "area": "Equipe do projeto",
         "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",

@@ -26,9 +26,9 @@ Todos os arquivos do site ficam na raiz deste repositório. A pasta `assets/` co
 
 A primeira foto enviada está em `assets/people/candidato.webp` e aparece na abertura do carrossel e no destaque da aba Integrantes. Edite `candidato` em `data.js` para acrescentar o nome e a apresentação pessoal.
 
-Os dez demais retratos estão nos perfis `Integrante 01` a `Integrante 10`, na ordem dos anexos, excluindo a fotografia coletiva. Os nomes e as funções aguardam confirmação, sem atribuir biografias fictícias às fotos. Edite `nome`, `cargo`, `area` e `bio` na lista `integrantes`.
+Os oito retratos da equipe estão nos perfis `Integrante 01` a `Integrante 08`, na ordem dos anexos, excluindo a fotografia coletiva e os retratos com bebê e na praia. Os nomes e as funções aguardam confirmação, sem atribuir biografias fictícias às fotos. Edite `nome`, `cargo`, `area` e `bio` na lista `integrantes`.
 
-A foto coletiva aparece no carrossel e na apresentação da equipe. Todos os 12 anexos foram incorporados. As imagens são versões WebP otimizadas; miniaturas menores são usadas nos cartões. Os arquivos originais enviados não foram alterados.
+A foto coletiva aparece no carrossel e na apresentação da equipe. Os retratos com bebê e na praia foram retirados da seção Integrantes conforme solicitado. As imagens são versões WebP otimizadas; miniaturas menores são usadas nos cartões. Os arquivos originais enviados não foram alterados.
 
 Para trocar um retrato, ajuste `avatar` (imagem completa), `miniatura` (cartão), `x` e `y` (posição do enquadramento, em porcentagem). As fotos ficam em `assets/people/`.
 
