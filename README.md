@@ -22,18 +22,23 @@ Não precisa instalar Node.js nem iniciar um servidor. Imagens, fonte e proposta
 
 Todos os arquivos do site ficam na raiz deste repositório. A pasta `assets/` contém as imagens, fontes e o documento original das propostas.
 
-## Trocar integrantes
+## Candidato, integrantes e imagens
 
-Edite `integrantes` em `data.js`. Substitua `nome`, `cargo`, `area` e `bio`.
+A primeira foto enviada está em `assets/people/candidato.webp` e aparece na abertura do carrossel e no destaque da aba Integrantes. Edite `candidato` em `data.js` para acrescentar o nome e a apresentação pessoal.
 
-Para uma foto individual:
+Os dez demais retratos estão nos perfis `Integrante 01` a `Integrante 10`, na ordem dos anexos, excluindo a fotografia coletiva. Os nomes e as funções aguardam confirmação, sem atribuir biografias fictícias às fotos. Edite `nome`, `cargo`, `area` e `bio` na lista `integrantes`.
 
-1. Coloque a foto na pasta `assets`, com um nome sem espaços, por exemplo `integrante-lucas.jpg`.
-2. Troque o valor de `avatar` para `assets/integrante-lucas.jpg`.
-3. Use `x: '50%'` e `y: '50%'`.
-4. Para esse perfil, acrescente `individual: true` ao objeto. O site ajusta automaticamente o enquadramento de fotos individuais.
+A foto coletiva aparece no carrossel e na apresentação da equipe. Todos os 12 anexos foram incorporados. As imagens são versões WebP otimizadas; miniaturas menores são usadas nos cartões. Os arquivos originais enviados não foram alterados.
 
-As oito fotos iniciais mostram os Poupançudos da CAIXA a partir de uma imagem da coleção. Nomes e cargos são provisórios e não descrevem pessoas reais. A página informa esse caráter demonstrativo.
+Para trocar um retrato, ajuste `avatar` (imagem completa), `miniatura` (cartão), `x` e `y` (posição do enquadramento, em porcentagem). As fotos ficam em `assets/people/`.
+
+## Carrossel e animações
+
+- A troca automática começa ao abrir a página, com intervalo de 6 segundos, transição suave e barra de progresso. Ajuste `carrossel.intervalo` em `data.js`, em milissegundos.
+- Setas, indicadores, teclado e deslize horizontal permitem navegação manual.
+- A pausa manual e as pausas por ponteiro, foco, janela oculta, rolagem para fora do carrossel, outra aba e modal conservam o tempo restante.
+- A preferência de movimento reduzido do sistema desativa a troca automática e as animações; as setas continuam disponíveis.
+- Cartões e seções aparecem suavemente durante a rolagem. Modais, menus e botões têm transições discretas, com conteúdo acessível por teclado.
 
 ## Configurar contatos
 
@@ -69,7 +74,7 @@ O carrossel possui controles, indicadores, pausa, teclado e gesto horizontal. A 
 ## Fontes e créditos
 
 - Logo e propostas: anexos fornecidos pelo usuário.
-- Foto dos oito Poupançudos: https://www.escorregaopreco.com.br/ofertas/shopee/7340228 — imagem da oferta Shopee. Os personagens pertencem à CAIXA e são usados como fotos ilustrativas provisórias solicitadas pelo projeto. Não há vínculo ou apoio da CAIXA.
+- Retratos do candidato, integrantes e foto coletiva: 12 imagens fornecidas pela equipe do projeto.
 - Fotografias de ambientação: Unsplash, arquivos disponíveis em `assets`.
 - Fonte Manrope: Google Fonts. Licença SIL Open Font License incluída em `assets/OFL-Manrope.txt`.
 - Referência de organização: https://missao.org.br/ — navegação institucional e apresentação das ideias. A identidade visual e os textos deste site foram criados para o PNC.

@@ -3,11 +3,52 @@
 window.PNC_DATA = {
   partido: { nome: 'Partido Novo Caminho', sigla: 'PNC', numero: '54' },
   contatos: { email: '', whatsapp: '', instagram: '' },
+  carrossel: { intervalo: 6000 },
+  candidato: {"nome": "Nosso candidato", "cargo": "Candidato do PNC · 54", "area": "Partido Novo Caminho", "bio": "À frente da candidatura do projeto interdisciplinar, representa a proposta de unir o bem-estar da população ao desenvolvimento da cidade. Nome e apresentação pessoal serão atualizados pela equipe.", "avatar": "assets/people/candidato.webp", "miniatura": "assets/people/candidato-small.webp", "x": "50%", "y": "24%"},
   slides: [
-    { tag: 'PARTIDO NOVO CAMINHO · 54', titulo: 'O futuro pede<br>um <em>novo caminho.</em>', texto: 'Além dos rótulos, perto das pessoas. Ideias que unem qualidade de vida, oportunidades e desenvolvimento para a nossa cidade.', botao: 'Conheça nossas propostas', destino: '#inicio/propostas', visual: 'logo', detalhe: 'GENTE + DESENVOLVIMENTO', legenda: 'Uma cidade melhor começa<br>com uma nova forma de pensar.' },
-    { tag: 'CUIDAR DA CIDADE É CUIDAR DE QUEM VIVE NELA', titulo: 'Uma cidade melhor.<br>Para <em>todo mundo.</em>', texto: 'Moradia segura, transporte acessível e saneamento onde mais faz falta. Serviços públicos que chegam a quem precisa.', botao: 'Explore nosso programa', destino: '#sobre/programa', visual: 'cidade', detalhe: 'QUALIDADE DE VIDA', legenda: 'O bairro também precisa<br>estar no centro das decisões.' },
-    { tag: 'OPORTUNIDADES PARA O PRESENTE E O FUTURO', titulo: 'Desenvolver.<br>Incluir. <em>Avançar.</em>', texto: 'Indústria mais sustentável e escolas abertas à comunidade. Crescimento com qualificação, cultura e novas oportunidades.', botao: 'Entenda nossa visão', destino: '#sobre', visual: 'educacao', detalhe: 'DESENVOLVIMENTO COM PROPÓSITO', legenda: 'Mais oportunidades.<br>Mais caminhos possíveis.' }
-  ],
+    {
+        "tag": "NOSSO CANDIDATO · PNC 54",
+        "titulo": "O futuro pede<br>um <em>novo caminho.</em>",
+        "texto": "Além dos rótulos, perto das pessoas. Nosso candidato representa o compromisso do PNC com qualidade de vida, oportunidades e desenvolvimento.",
+        "botao": "Conheça nosso candidato",
+        "destino": "#integrantes/candidato",
+        "imagem": "assets/people/candidato.webp",
+        "alt": "Retrato do candidato do PNC de terno, diante de bandeiras",
+        "formato": "portrait",
+        "x": "50%",
+        "y": "24%",
+        "detalhe": "CANDIDATO DO PARTIDO",
+        "legenda": "Pessoas em primeiro lugar.<br>Um novo caminho para a cidade."
+    },
+    {
+        "tag": "DIFERENTES OLHARES · UM MESMO PROPÓSITO",
+        "titulo": "Uma equipe.<br><em>Muitos caminhos.</em>",
+        "texto": "Pessoas que se unem para ouvir, debater e construir propostas. Conheça quem faz parte do Partido Novo Caminho.",
+        "botao": "Conheça a equipe",
+        "destino": "#integrantes",
+        "imagem": "assets/people/equipe.webp",
+        "alt": "Equipe do PNC reunida com a bandeira do partido",
+        "formato": "team",
+        "x": "50%",
+        "y": "50%",
+        "detalhe": "QUEM CONSTRÓI ESSE CAMINHO",
+        "legenda": "Ideias ganham força<br>quando construídas em conjunto."
+    },
+    {
+        "tag": "OPORTUNIDADES PARA O PRESENTE E O FUTURO",
+        "titulo": "Desenvolver.<br>Incluir. <em>Avançar.</em>",
+        "texto": "Indústria mais sustentável e escolas abertas à comunidade. Crescimento com qualificação, cultura e novas oportunidades.",
+        "botao": "Explore nosso programa",
+        "destino": "#sobre/programa",
+        "imagem": "assets/people/integrante-01.webp",
+        "alt": "Integrante do projeto com traje formal e distintivo do PNC",
+        "formato": "portrait",
+        "x": "50%",
+        "y": "25%",
+        "detalhe": "DESENVOLVIMENTO COM PROPÓSITO",
+        "legenda": "Mais oportunidades.<br>Mais caminhos possíveis."
+    }
+],
   propostas: [
     { id: 'moradia', numero: '01', categoria: 'MORADIA', titulo: 'Um lugar seguro<br>para chamar de lar.', curto: 'Proteção e moradia digna para famílias em áreas de risco, com soluções construídas junto aos moradores.', icone: 'home', frase: 'Segurança também depende de onde fica a nova casa.', descricao: 'Combinar obras de proteção onde for possível permanecer com segurança e reassentamento onde o risco não puder ser controlado. A decisão deve contar com avaliação técnica e participação dos moradores.', acoes: ['Mapear os riscos e priorizar a gravidade e a vulnerabilidade das famílias.', 'Oferecer moradia temporária enquanto a solução definitiva é preparada.', 'Buscar novas moradias próximas de transporte, escolas, serviços e trabalho.', 'Recuperar e fiscalizar terrenos desocupados para evitar novas ocupações.'], financiamento: 'Combinar orçamento municipal com recursos estaduais e federais de habitação e prevenção de desastres. Os valores precisam ser definidos após levantamento técnico e análise do orçamento.', resultado: 'Acompanhar famílias atendidas, tempo de espera e acesso a serviços na nova moradia.', pergunta: 'Como conciliar a participação da família com a proteção de vidas diante de um risco comprovado?' },
     { id: 'transporte', numero: '02', categoria: 'MOBILIDADE', titulo: 'Menos barreiras.<br>Mais movimento.', curto: 'Transporte público mais barato, com expansão gradual da gratuidade e compromisso com a qualidade.', icone: 'bus', frase: 'A passagem acessível precisa vir junto de um ônibus que funciona.', descricao: 'Ampliar a gratuidade por etapas, com o objetivo de chegar à tarifa zero, condicionando cada expansão à existência de financiamento e capacidade de atendimento.', acoes: ['Começar pelos grupos para os quais a passagem mais dificulta o acesso a estudo, trabalho e serviços.', 'Publicar os custos do sistema e os pagamentos às operadoras.', 'Vincular os subsídios a metas de frequência, pontualidade, acessibilidade e atendimento aos bairros.', 'Planejar reforço da frota quando a demanda aumentar.'], financiamento: 'Criar previsão permanente no orçamento municipal, com fonte de receita definida antes de ampliar o benefício.', resultado: 'Medir tempo de espera, viagens realizadas, acessibilidade e custo por passageiro.', pergunta: 'Com recursos limitados, como equilibrar descontos, gratuidade e melhoria das linhas?' },
@@ -22,15 +63,107 @@ window.PNC_DATA = {
     { titulo: 'Transparência e participação', texto: 'Publicar custos, critérios e metas, incluindo os moradores na construção e no acompanhamento das decisões.', icone: 'dialogue' }
   ],
   integrantes: [
-    { nome: 'Lucas Almeida', cargo: 'Coordenação geral', area: 'Organização', bio: 'Perfil provisório para a pessoa responsável por articular a equipe e acompanhar o desenvolvimento do projeto.', avatar: 'assets/poupancudos-original.jpg', x: '2.7%', y: '38.5%' },
-    { nome: 'Mariana Costa', cargo: 'Planejamento e propostas', area: 'Planejamento', bio: 'Perfil provisório para a pessoa responsável pela pesquisa e pela organização das propostas do partido.', avatar: 'assets/poupancudos-original.jpg', x: '29.5%', y: '30%' },
-    { nome: 'Gabriel Santos', cargo: 'Comunicação', area: 'Comunicação', bio: 'Perfil provisório para a pessoa responsável pela comunicação do projeto e pelas publicações do PNC.', avatar: 'assets/poupancudos-original.jpg', x: '42%', y: '38.5%' },
-    { nome: 'Ana Oliveira', cargo: 'Educação e cultura', area: 'Educação', bio: 'Perfil provisório para a pessoa responsável por desenvolver o eixo de educação, esporte e cultura.', avatar: 'assets/poupancudos-original.jpg', x: '66.8%', y: '28.7%' },
-    { nome: 'Pedro Rodrigues', cargo: 'Mobilidade urbana', area: 'Mobilidade', bio: 'Perfil provisório para a pessoa responsável por pesquisar transporte, acessibilidade e mobilidade nos bairros.', avatar: 'assets/poupancudos-original.jpg', x: '15.8%', y: '40%' },
-    { nome: 'Julia Ferreira', cargo: 'Moradia e saneamento', area: 'Infraestrutura', bio: 'Perfil provisório para a pessoa responsável pelos temas de moradia segura e serviços de saneamento.', avatar: 'assets/poupancudos-original.jpg', x: '70%', y: '41%' },
-    { nome: 'Rafael Martins', cargo: 'Indústria e sustentabilidade', area: 'Desenvolvimento', bio: 'Perfil provisório para a pessoa responsável por estudar modernização industrial, meio ambiente e qualificação.', avatar: 'assets/poupancudos-original.jpg', x: '91.7%', y: '38.5%' },
-    { nome: 'Beatriz Lima', cargo: 'Participação e comunidade', area: 'Participação', bio: 'Perfil provisório para a pessoa responsável pela escuta da comunidade e pela preparação do debate.', avatar: 'assets/poupancudos-original.jpg', x: '42.7%', y: '56%' }
-  ],
+    {
+        "nome": "Integrante 01",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-01.webp",
+        "miniatura": "assets/people/integrante-01-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 02",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-02.webp",
+        "miniatura": "assets/people/integrante-02-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 03",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-03.webp",
+        "miniatura": "assets/people/integrante-03-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 04",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-04.webp",
+        "miniatura": "assets/people/integrante-04-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 05",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-05.webp",
+        "miniatura": "assets/people/integrante-05-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 06",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-06.webp",
+        "miniatura": "assets/people/integrante-06-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 07",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-07.webp",
+        "miniatura": "assets/people/integrante-07-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 08",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-08.webp",
+        "miniatura": "assets/people/integrante-08-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 09",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-09.webp",
+        "miniatura": "assets/people/integrante-09-small.webp",
+        "x": "50%",
+        "y": "20%"
+    },
+    {
+        "nome": "Integrante 10",
+        "cargo": "Integrante do PNC",
+        "area": "Equipe do projeto",
+        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "avatar": "assets/people/integrante-10.webp",
+        "miniatura": "assets/people/integrante-10-small.webp",
+        "x": "50%",
+        "y": "20%"
+    }
+],
   noticias: [
     { id: 'programa', categoria: 'Propostas', titulo: 'Cinco frentes. Um compromisso com a cidade.', resumo: 'Conheça as prioridades que conectam qualidade de vida e desenvolvimento no programa do PNC.', imagem: 'assets/cidade.jpg', alt: 'Vista de edifícios e áreas verdes em uma cidade', leitura: '3 min', destaque: true, paragrafos: ['O programa municipal do PNC se organiza em cinco frentes: moradia segura, transporte acessível, saneamento, modernização industrial e escolas abertas à comunidade.', 'O que une essas propostas é a preocupação com a vida nos bairros e com o retorno social dos investimentos. Cada programa deve ter financiamento definido, critérios públicos, metas e acompanhamento.', 'As propostas são um ponto de partida para o debate interdisciplinar. Custos e cronogramas dependem de levantamento técnico e do orçamento disponível.'], proposta: 'moradia' },
     { id: 'escolas', categoria: 'Educação', titulo: 'Quando a escola abre, a comunidade ganha caminhos.', resumo: 'Esporte, cultura e tecnologia podem ampliar o uso de espaços que já fazem parte dos bairros.', imagem: 'assets/educacao.jpg', alt: 'Estudantes em um ambiente de aprendizado', leitura: '2 min', paragrafos: ['O PNC propõe um programa de atividades em escolas de bairros com poucas opções gratuitas. As oficinas devem ser escolhidas com estudantes e moradores.', 'Abrir o prédio exige profissionais, limpeza, segurança, acessibilidade, materiais e manutenção. O programa deve ter estrutura própria para preservar as aulas e evitar sobrecarga da equipe escolar.', 'A expansão precisa considerar a participação e os resultados. Nas escolas estaduais, a execução depende de articulação com o governo estadual.'], proposta: 'educacao' },

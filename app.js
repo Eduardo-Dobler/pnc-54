@@ -27,18 +27,15 @@
   const icon = name => `<svg aria-hidden="true" viewBox="0 0 24 24">${iconPaths[name] || iconPaths.dialogue}</svg>`;
   const iconBox = name => `<span class="proposal-icon">${icon(name)}</span>`;
 
-  // Destaques da página inicial.
-  $('#hero-slides').innerHTML = data.slides.map((slide, i) => {
-    const art = slide.visual === 'logo'
-      ? '<img class="hero-eagle" src="assets/logo-pnc.png" width="520" height="520" alt="Águia símbolo do PNC 54">'
-      : `<div class="hero-photo"><img src="assets/${slide.visual === 'cidade' ? 'cidade' : 'educacao'}.jpg" alt="${slide.visual === 'cidade' ? 'Vista urbana com edifícios e áreas verdes' : 'Estudantes em um ambiente de aprendizagem'}" width="650" height="600"><span class="photo-number" aria-hidden="true">54</span></div>`;
-    return `<article class="hero-slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${data.slides.length}" ${i ? 'hidden' : ''}>
-      <div class="hero-copy"><p class="eyebrow"><span class="hero-pill" aria-hidden="true"></span>${escapeHTML(slide.tag)}</p>
-        <h1>${titleHTML(slide.titulo)}</h1><p>${escapeHTML(slide.texto)}</p>
-        <div class="hero-actions"><a class="button button-gold" href="${escapeHTML(slide.destino)}">${escapeHTML(slide.botao)}<span aria-hidden="true">↗</span></a><a class="text-link" href="#sobre">Nossa visão <span aria-hidden="true">→</span></a></div>
-      </div><div class="hero-art"><span class="art-coordinate" aria-hidden="true">PNC / NOVO CAMINHO</span><div class="hero-rings" aria-hidden="true"></div><span class="hero-watermark" aria-hidden="true">54</span>${art}<div class="art-label glass"><p class="eyebrow">${escapeHTML(slide.detalhe)}</p><p>${titleHTML(slide.legenda)}</p></div></div>
-    </article>`;
-  }).join('');
+  // Destaques com fotografias fornecidas pela equipe.
+  $('#hero-slides').innerHTML = data.slides.map((slide, i) => `<article class="hero-slide${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${data.slides.length}" aria-hidden="${i !== 0}" ${i ? 'inert' : ''}>
+    <div class="hero-copy"><p class="eyebrow"><span class="hero-pill" aria-hidden="true"></span>${escapeHTML(slide.tag)}</p>
+      <h1>${titleHTML(slide.titulo)}</h1><p>${escapeHTML(slide.texto)}</p>
+      <div class="hero-actions"><a class="button button-gold" href="${escapeHTML(slide.destino)}">${escapeHTML(slide.botao)}<span aria-hidden="true">↗</span></a><a class="text-link" href="#sobre">Nossa visão <span aria-hidden="true">→</span></a></div>
+    </div><div class="hero-art"><span class="art-coordinate" aria-hidden="true">PNC / NOVO CAMINHO</span><div class="hero-rings" aria-hidden="true"></div>
+      <div class="hero-photo hero-photo--${slide.formato === 'team' ? 'team' : 'portrait'}"><img src="${safeAsset(slide.imagem)}" alt="${escapeHTML(slide.alt)}" width="1080" height="1440" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} style="object-position:${safePercent(slide.x)} ${safePercent(slide.y)}"><span class="photo-number" aria-hidden="true">54</span></div>
+      <div class="art-label glass"><p class="eyebrow">${escapeHTML(slide.detalhe)}</p><p>${titleHTML(slide.legenda)}</p></div>
+    </div></article>`).join('');
   $('#slide-dots').innerHTML = data.slides.map((_, i) => `<button class="slide-dot" type="button" data-slide="${i}" aria-label="Ir para o destaque ${i + 1}" aria-pressed="${i === 0}"></button>`).join('');
 
   // Propostas e programa aprofundado usam a mesma fonte de conteúdo.
@@ -47,8 +44,10 @@
   $('#program-list').innerHTML = data.propostas.map(p => `<details class="program-item glass" id="program-${escapeHTML(p.id)}"><summary><span class="program-no">${escapeHTML(p.numero)}</span>${iconBox(p.icone)}<h3>${escapeHTML(textTitle(p.titulo))}</h3><span class="program-toggle" aria-hidden="true">+</span></summary>${proposalBody(p)}</details>`).join('');
   $('#principle-grid').innerHTML = data.principios.map(p => `<article class="principle-card glass">${iconBox(p.icone)}<h3>${escapeHTML(p.titulo)}</h3><p>${escapeHTML(p.texto)}</p></article>`).join('');
 
-  const avatar = (p, label) => `<div class="member-avatar${p.individual ? ' individual-photo' : ''}" ${label ? `role="img" aria-label="${escapeHTML(label)}"` : 'aria-hidden="true"'} style="background-image:url('${safeAsset(p.avatar)}');--portrait-x:${safePercent(p.x)};--portrait-y:${safePercent(p.y)}"></div>`;
-  $('#member-grid').innerHTML = data.integrantes.map((p, i) => `<article class="member-card glass"><span aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>${avatar(p, p.individual ? `Foto de ${p.nome}` : 'Foto ilustrativa de um Poupançudo da CAIXA')}<h2>${escapeHTML(p.nome)}</h2><p>${escapeHTML(p.cargo)}</p><p class="member-area">${escapeHTML(p.area)}</p><button type="button" data-member="${i}" aria-label="Conhecer o perfil de ${escapeHTML(p.nome)}">Conhecer integrante <span aria-hidden="true">↗</span></button></article>`).join('');
+  const avatar = (p, label, full = false) => `<div class="member-avatar"><img src="${safeAsset(full ? p.avatar : p.miniatura || p.avatar)}" alt="${escapeHTML(label)}" width="480" height="680" loading="lazy" style="object-position:${safePercent(p.x)} ${safePercent(p.y)}"></div>`;
+  const candidate = data.candidato;
+  $('#candidato').innerHTML = `${avatar(candidate, 'Retrato do candidato do PNC', true)}<div class="candidate-copy"><p class="eyebrow">CANDIDATURA · PNC 54</p><h2 id="candidate-title">${escapeHTML(candidate.nome)}</h2><p class="candidate-lead">Pessoas em primeiro lugar.<br>Desenvolvimento com propósito.</p><p>${escapeHTML(candidate.bio)}</p><a class="button button-gold" href="#sobre/programa">Conheça as propostas <span aria-hidden="true">↗</span></a></div><span class="candidate-number" aria-hidden="true">54</span>`;
+  $('#member-grid').innerHTML = data.integrantes.map((p, i) => `<article class="member-card glass"><span aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>${avatar(p, `Retrato do ${p.nome.toLowerCase()}`)}<div class="member-copy"><p class="member-area">${escapeHTML(p.area)}</p><h2>${escapeHTML(p.nome)}</h2><p>${escapeHTML(p.cargo)}</p><button type="button" data-member="${i}" aria-label="Conhecer o perfil de ${escapeHTML(p.nome)}">Conhecer integrante <span aria-hidden="true">↗</span></button></div></article>`).join('');
 
   // Publicações e busca por categoria, título, resumo e conteúdo.
   const newsCard = item => `<article class="news-card"><div class="news-image"><img loading="lazy" src="${safeAsset(item.imagem)}" alt="${escapeHTML(item.alt)}" width="600" height="400"><span class="news-tag">${escapeHTML(item.categoria)}</span></div><div class="news-content"><div class="news-meta"><span>PUBLICAÇÃO DEMONSTRATIVA</span><span>${escapeHTML(item.leitura)} de leitura</span></div><h3>${escapeHTML(item.titulo)}</h3><p>${escapeHTML(item.resumo)}</p><button class="card-link" type="button" data-article="${escapeHTML(item.id)}">Ler publicação<span class="sr-only">: ${escapeHTML(item.titulo)}</span></button></div></article>`;
@@ -63,8 +62,8 @@
     $('#news-empty').hidden = results.length !== 0;
     $$('.filter-button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.category === activeCategory)));
   }
-  $('#news-filters').addEventListener('click', e => { const b = e.target.closest('[data-category]'); if (b) { activeCategory = b.dataset.category; filterNews(); } });
-  $('#news-search').addEventListener('input', filterNews);
+  $('#news-filters').addEventListener('click', e => { const b = e.target.closest('[data-category]'); if (b) { activeCategory = b.dataset.category; filterNews(); revealContent(); } });
+  $('#news-search').addEventListener('input', () => { filterNews(); revealContent(); });
   filterNews();
 
   // Menu acessível para telas pequenas.
@@ -79,45 +78,100 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); menuButton.focus(); } });
   window.addEventListener('resize', () => { if (window.innerWidth > 800) closeMenu(); });
 
-  // Carrossel com pausa, teclado, gesto e respeito a movimento reduzido.
+  // Um único temporizador; pausa conserva o tempo restante e o progresso.
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const carousel = $('#hero-carousel');
+  const slides = $$('.hero-slide');
+  const progressFill = $('#carousel-progress-fill');
+  const duration = Math.max(3000, Number(data.carrossel.intervalo) || 6000);
+  carousel.style.setProperty('--slide-duration', `${duration}ms`);
   let slideIndex = 0;
   let timer = null;
+  let startedAt = 0;
+  let remaining = duration;
   let userPaused = false;
   let hovered = false;
   let focusInside = false;
+  let carouselVisible = true;
   let currentPage = '';
+  function stopTimer() {
+    if (timer !== null) {
+      remaining = Math.max(0, remaining - (performance.now() - startedAt));
+      clearTimeout(timer);
+      timer = null;
+    }
+  }
   function showSlide(index) {
-    slideIndex = (index + data.slides.length) % data.slides.length;
-    $$('.hero-slide').forEach((slide, i) => { slide.hidden = i !== slideIndex; });
+    stopTimer();
+    slideIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      const active = i === slideIndex;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+      slide.inert = !active;
+    });
     $$('.slide-dot').forEach((b, i) => b.setAttribute('aria-pressed', String(i === slideIndex)));
-    $('#slide-count').innerHTML = `${String(slideIndex + 1).padStart(2, '0')} <span>/ ${String(data.slides.length).padStart(2, '0')}</span>`;
+    $('#slide-count').innerHTML = `${String(slideIndex + 1).padStart(2, '0')} <span>/ ${String(slides.length).padStart(2, '0')}</span>`;
+    remaining = duration;
+    progressFill.style.animationName = 'none';
+    void progressFill.offsetWidth;
+    progressFill.style.animationName = 'carousel-fill';
   }
   function syncCarousel() {
-    if (timer) clearInterval(timer);
-    timer = null;
+    stopTimer();
     const paused = userPaused || motion.matches;
+    const running = !paused && !hovered && !focusInside && !document.hidden && carouselVisible && currentPage === 'inicio' && !$('#detail-dialog').open;
     $('#carousel-pause').textContent = paused ? '▷' : 'Ⅱ';
-    $('#carousel-pause').setAttribute('aria-label', motion.matches ? 'Animação automática desativada por preferência de movimento reduzido' : (paused ? 'Retomar carrossel' : 'Pausar carrossel'));
+    $('#carousel-pause').setAttribute('aria-label', motion.matches ? 'Troca automática desativada por preferência de movimento reduzido' : (paused ? 'Retomar carrossel' : 'Pausar carrossel'));
     $('#carousel-pause').disabled = motion.matches;
-    if (!paused && !hovered && !focusInside && !document.hidden && currentPage === 'inicio') timer = setInterval(() => showSlide(slideIndex + 1), 8000);
+    $('#hero-slides').setAttribute('aria-live', running ? 'off' : 'polite');
+    $('#carousel-status').textContent = motion.matches ? 'Movimento reduzido · use as setas' : paused ? 'Carrossel pausado' : running ? `Troca automática · ${duration / 1000} segundos` : 'Pausa durante a interação';
+    progressFill.style.animationPlayState = running ? 'running' : 'paused';
+    if (running) {
+      startedAt = performance.now();
+      timer = setTimeout(() => { timer = null; showSlide(slideIndex + 1); syncCarousel(); }, remaining);
+    }
   }
   function changeSlide(index) { showSlide(index); syncCarousel(); }
   $('#carousel-next').addEventListener('click', () => changeSlide(slideIndex + 1));
   $('#carousel-prev').addEventListener('click', () => changeSlide(slideIndex - 1));
   $('#carousel-pause').addEventListener('click', () => { userPaused = !userPaused; syncCarousel(); });
   $('#slide-dots').addEventListener('click', e => { const b = e.target.closest('[data-slide]'); if (b) changeSlide(Number(b.dataset.slide)); });
-  carousel.addEventListener('mouseenter', () => { hovered = true; syncCarousel(); });
-  carousel.addEventListener('mouseleave', () => { hovered = false; syncCarousel(); });
+  carousel.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; syncCarousel(); } });
+  carousel.addEventListener('pointerleave', () => { hovered = false; syncCarousel(); });
   carousel.addEventListener('focusin', () => { focusInside = true; syncCarousel(); });
   carousel.addEventListener('focusout', e => { focusInside = carousel.contains(e.relatedTarget); syncCarousel(); });
   carousel.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(slideIndex + (e.key === 'ArrowRight' ? 1 : -1)); } });
   let touchStart = null;
   carousel.addEventListener('touchstart', e => { touchStart = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY }; }, { passive: true });
   carousel.addEventListener('touchend', e => { if (!touchStart) return; const dx = e.changedTouches[0].clientX - touchStart.x; const dy = e.changedTouches[0].clientY - touchStart.y; if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) changeSlide(slideIndex + (dx < 0 ? 1 : -1)); touchStart = null; }, { passive: true });
+  carousel.addEventListener('touchcancel', () => { touchStart = null; });
   document.addEventListener('visibilitychange', syncCarousel);
-  motion.addEventListener('change', syncCarousel);
+  motion.addEventListener('change', () => { showSlide(slideIndex); syncCarousel(); revealContent(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => { carouselVisible = entries[0].isIntersecting; syncCarousel(); }, { threshold: 0.15 }).observe(carousel);
+  }
+  showSlide(0);
+
+  // Revelações discretas, acionadas uma vez; conteúdo permanece disponível sem a API.
+  const revealSelector = '.section-heading, .proposal-card, .manifesto-banner, .news-card, .participate, .candidate-feature, .team-banner, .member-card, .principle-card, .program-item, .process-grid article, .about-opening, .about-closing, .contact-info, .contact-form';
+  const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.08 }) : null;
+  function revealContent() {
+    if (!revealObserver || motion.matches) return;
+    $$('.page:not([hidden])').forEach(page => {
+      Array.from(page.querySelectorAll(revealSelector)).forEach((element, i) => {
+        if (element.classList.contains('reveal')) return;
+        element.classList.add('reveal');
+        element.style.setProperty('--reveal-delay', `${(i % 4) * 55}ms`);
+        revealObserver.observe(element);
+      });
+    });
+  }
+  document.addEventListener('focusin', e => e.target.closest('.reveal')?.classList.add('is-revealed'));
 
   // Diálogos nativos mantêm foco e podem ser fechados com Escape.
   const dialog = $('#detail-dialog');
@@ -130,9 +184,10 @@
     if (!dialog.open) dialog.showModal();
     document.body.classList.add('modal-open');
     $('#close-dialog').focus();
+    syncCarousel();
   }
   function closeDialog() { if (dialog.open) dialog.close(); }
-  dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); if (dialogTrigger && document.contains(dialogTrigger)) dialogTrigger.focus({ preventScroll: true }); });
+  dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); syncCarousel(); if (dialogTrigger && document.contains(dialogTrigger)) dialogTrigger.focus({ preventScroll: true }); });
   $('#close-dialog').addEventListener('click', closeDialog);
   dialog.addEventListener('click', e => { if (e.target === dialog) { const b = dialog.getBoundingClientRect(); if (e.clientX < b.left || e.clientX > b.right || e.clientY < b.top || e.clientY > b.bottom) closeDialog(); } });
   document.addEventListener('click', e => {
@@ -144,7 +199,7 @@
     const memberButton = e.target.closest('[data-member]');
     if (memberButton) {
       const p = data.integrantes[Number(memberButton.dataset.member)];
-      if (p) openDialog(`<div class="profile-modal">${avatar(p, p.individual ? `Foto de ${p.nome}` : 'Poupançudo da CAIXA usado como foto provisória')}<p class="eyebrow">${escapeHTML(p.area)}</p><h2>${escapeHTML(p.nome)}</h2><p class="profile-cargo">${escapeHTML(p.cargo)}</p><p>${escapeHTML(p.bio)}</p>${p.individual ? '' : '<span class="profile-badge">Integrante de exemplo · Foto provisória</span>'}</div>`, memberButton);
+      if (p) openDialog(`<div class="profile-modal">${avatar(p, `Retrato do ${p.nome.toLowerCase()}`, true)}<p class="eyebrow">${escapeHTML(p.area)}</p><h2>${escapeHTML(p.nome)}</h2><p class="profile-cargo">${escapeHTML(p.cargo)}</p><p>${escapeHTML(p.bio)}</p><span class="profile-badge">Nome e função a confirmar</span></div>`, memberButton);
     }
     const articleButton = e.target.closest('[data-article]');
     if (articleButton) {
@@ -153,7 +208,7 @@
     }
     if (e.target.closest('#detail-dialog a[href^="#"]')) closeDialog();
   });
-  $('#credits-button').addEventListener('click', e => openDialog('<p class="eyebrow">SOBRE ESTE PROJETO</p><h2>Feito para pensar<br>um novo caminho.</h2><p>Site de um partido fictício, criado para o projeto interdisciplinar do SENAC. Propostas baseadas no documento fornecido pela equipe. Integrantes, funções e publicações são demonstrativos.</p><ul class="credit-list"><li>Identidade visual: logo fornecida pelo projeto.</li><li>Fotos provisórias: Poupançudos da CAIXA, com imagem disponível no <a href="https://www.escorregaopreco.com.br/ofertas/shopee/7340228" target="_blank" rel="noopener noreferrer">Escorrega o Preço / Shopee</a>.</li><li>Fotografias de ambientação: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</li><li>Tipografia: Manrope, distribuída pelo Google Fonts.</li><li>Referência de organização: <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">site Missão</a>. Conteúdo e identidade próprios do PNC.</li></ul><p>Os Poupançudos são usados como ilustração provisória solicitada para o projeto. Não representam vínculo ou apoio da CAIXA.</p>', e.currentTarget));
+  $('#credits-button').addEventListener('click', e => openDialog('<p class="eyebrow">SOBRE ESTE PROJETO</p><h2>Feito para pensar<br>um novo caminho.</h2><p>Site de um partido fictício, criado para o projeto interdisciplinar do SENAC. Propostas baseadas no documento fornecido pela equipe. Nomes, funções e publicações serão revisados pela equipe.</p><ul class="credit-list"><li>Identidade visual: logo fornecida pelo projeto.</li><li>Retratos do candidato, integrantes e fotografia da equipe: imagens fornecidas para o projeto.</li><li>Fotografias de ambientação: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</li><li>Tipografia: Manrope, distribuída pelo Google Fonts.</li><li>Referência de organização: <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">site Missão</a>. Conteúdo e identidade próprios do PNC.</li></ul><p>Os nomes e as funções dos integrantes ainda serão confirmados pela equipe.</p>', e.currentTarget));
 
   // As abas possuem URLs próprias por hash e funcionam sem servidor.
   const pageTitles = { inicio: 'Início', integrantes: 'Integrantes', sobre: 'Sobre o partido', noticias: 'Notícias', contatos: 'Contatos' };
@@ -166,10 +221,11 @@
     $$('.page').forEach(page => { page.hidden = page.dataset.page !== selected; });
     $$('[data-route]').forEach(link => { if (link.dataset.route === selected) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
     document.title = `${pageTitles[selected]} · PNC 54 — Partido Novo Caminho`;
-    closeMenu(); closeDialog(); syncCarousel();
+    closeMenu(); closeDialog(); syncCarousel(); revealContent();
     requestAnimationFrame(() => {
       let target = null;
       if (selected === 'inicio' && parts[1] === 'propostas') target = $('#propostas');
+      if (selected === 'integrantes' && parts[1] === 'candidato') target = $('#candidato');
       if (selected === 'sobre') {
         if (parts[1] === 'programa') target = $('#programa');
         else if (data.propostas.some(p => p.id === parts[1])) { target = $(`#program-${parts[1]}`); target.open = true; }
