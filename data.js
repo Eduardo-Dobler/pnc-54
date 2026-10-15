@@ -64,84 +64,92 @@ window.PNC_DATA = {
   ],
   integrantes: [
     {
-        "nome": "Integrante 01",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Matheus Vanin",
+        "cargo": "Presidente",
+        "area": "Presidência",
+        "bio": "Matheus Vanin assume a presidência com um compromisso claro: unir pessoas em torno de um projeto que coloque a população em primeiro lugar. Sua função é dar direção ao PNC, ouvir diferentes perspectivas e manter a equipe focada em propostas responsáveis. Liderar é construir confiança e incentivar cada integrante a contribuir para um futuro com mais oportunidades.",
         "avatar": "assets/people/integrante-01.webp",
         "miniatura": "assets/people/integrante-01-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Liderança para unir a equipe e transformar boas ideias em um caminho possível."
     },
     {
-        "nome": "Integrante 02",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Eduardo Dobler",
+        "cargo": "Vice-Presidente",
+        "area": "Vice-Presidência",
+        "bio": "Eduardo Dobler fortalece a presidência e ajuda a transformar decisões em ações coordenadas. Na vice-presidência, seu compromisso é aproximar a equipe, acompanhar as prioridades e dar continuidade ao trabalho do partido. Com diálogo e disposição para colaborar, atua para que cada passo do PNC seja construído com união, responsabilidade e confiança no futuro.",
         "avatar": "assets/people/integrante-04.webp",
         "miniatura": "assets/people/integrante-04-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Diálogo e parceria para manter o PNC unido e levar seus compromissos adiante."
     },
     {
-        "nome": "Integrante 03",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Ana Laura",
+        "cargo": "Coordenadora de Campanha",
+        "area": "Coordenação",
+        "bio": "Ana Laura coordena a campanha com o propósito de conectar pessoas, organizar ações e dar ritmo ao trabalho da equipe. Sua missão é alinhar os esforços do PNC para que as propostas cheguem à comunidade com clareza e propósito. Cada atividade é uma oportunidade de ouvir, mobilizar e mostrar que um novo caminho se constrói com participação e dedicação.",
         "avatar": "assets/people/integrante-05.webp",
         "miniatura": "assets/people/integrante-05-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Organização e energia para aproximar nossas ideias da comunidade."
     },
     {
-        "nome": "Integrante 04",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Theresa Venzon",
+        "cargo": "Especialista Técnica",
+        "area": "Análise técnica",
+        "bio": "Theresa Venzon tem a missão de dar consistência técnica às ideias do PNC. Seu trabalho é analisar possibilidades, avaliar desafios e ajudar a transformar objetivos em propostas que possam ser executadas e acompanhadas. Com atenção aos detalhes e compromisso com a qualidade, contribui para que a confiança no futuro venha acompanhada de planejamento e responsabilidade.",
         "avatar": "assets/people/integrante-06.webp",
         "miniatura": "assets/people/integrante-06-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Análise e responsabilidade para dar consistência às propostas do partido."
     },
     {
-        "nome": "Integrante 05",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Vinicius Petry",
+        "cargo": "Assessor",
+        "area": "Assessoria",
+        "bio": "Vinicius Petry atua na assessoria com o compromisso de apoiar a equipe, organizar demandas e facilitar o andamento do projeto. Sua função conecta decisões e execução, ajudando cada integrante a trabalhar com mais clareza e alinhamento. É na dedicação ao cotidiano e no cuidado com cada etapa que o PNC ganha força para seguir em frente.",
         "avatar": "assets/people/integrante-07.webp",
         "miniatura": "assets/people/integrante-07-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Atenção aos detalhes e apoio à equipe para fazer cada etapa avançar."
     },
     {
-        "nome": "Integrante 06",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Cristiano Luca",
+        "cargo": "Pesquisador",
+        "area": "Pesquisa",
+        "bio": "Cristiano Luca aprofunda o conhecimento que sustenta as propostas do PNC. Sua missão é reunir informações, comparar alternativas e compreender os problemas da comunidade para orientar escolhas mais conscientes. A pesquisa amplia nossa capacidade de agir: quanto melhor conhecemos a realidade, mais preparados estamos para construir soluções relevantes e responsáveis.",
         "avatar": "assets/people/integrante-08.webp",
         "miniatura": "assets/people/integrante-08-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Informação e pesquisa para construir escolhas mais conscientes."
     },
     {
-        "nome": "Integrante 07",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Mateus Sjlender",
+        "cargo": "Financiador",
+        "area": "Recursos e planejamento",
+        "bio": "Mateus Sjlender apoia a estrutura do projeto e contribui para o planejamento dos recursos necessários ao trabalho da equipe. Como financiador, seu compromisso é ajudar a dar continuidade às ações do PNC, com organização e transparência. Apoiar um novo caminho é acreditar no potencial das pessoas e oferecer condições para que suas ideias avancem.",
         "avatar": "assets/people/integrante-09.webp",
         "miniatura": "assets/people/integrante-09-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Apoio e planejamento para dar estrutura às ideias e continuidade ao projeto."
     },
     {
-        "nome": "Integrante 08",
-        "cargo": "Integrante do PNC",
-        "area": "Equipe do projeto",
-        "bio": "Integrante da equipe do Partido Novo Caminho. O nome, a função e a apresentação pessoal serão incluídos após a confirmação da equipe.",
+        "nome": "Yasmin Guidini",
+        "cargo": "Comunicadora",
+        "area": "Comunicação",
+        "bio": "Yasmin Guidini dá voz às ideias do PNC e aproxima o partido da comunidade. Sua missão é comunicar as propostas de forma clara, acessível e envolvente, abrindo espaço para o diálogo e a participação. Cada mensagem pode criar uma conexão: comunicar com confiança e responsabilidade ajuda a transformar interesse em colaboração e ideias em movimento.",
         "avatar": "assets/people/integrante-10.webp",
         "miniatura": "assets/people/integrante-10-small.webp",
         "x": "50%",
-        "y": "20%"
+        "y": "20%",
+        "resumo": "Uma voz clara e próxima para conectar o PNC à comunidade."
     }
 ],
   noticias: [
