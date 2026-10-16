@@ -83,3 +83,20 @@ O carrossel possui controles, indicadores, pausa, teclado e gesto horizontal. A 
 - Referência de organização: https://missao.org.br/ — navegação institucional e apresentação das ideias. A identidade visual e os textos deste site foram criados para o PNC.
 
 Este partido é fictício e o site se destina a fins educacionais.
+
+## App instalável para celular (PWA)
+
+O app mantém as mesmas cinco abas, o carrossel e o layout responsivo do site, com ícone do cavalo e abertura em janela própria. Não é um APK nem uma publicação em loja.
+
+- Android: abra o endereço HTTPS no Chrome e use **Instalar app PNC 54** no rodapé. Se a instalação automática não aparecer, procure **Instalar app** ou **Adicionar à tela inicial** no menu do navegador.
+- iPhone: abra o endereço no Safari, toque em **Compartilhar → Adicionar à Tela de Início**. Ative **Abrir como App da Web**, caso apareça.
+- Aguarde **Pronto para consultar sem internet** no rodapé antes de desconectar. A primeira preparação precisa de internet. O navegador pode remover dados offline para liberar espaço; nesse caso, abra online novamente.
+- O modo offline inclui páginas, fotos, fontes e o Word. Links externos continuam dependendo de internet. O formulário continua apenas preparando a mensagem.
+- Quando surgir **Atualizar app** no rodapé, salve ou copie qualquer mensagem em edição e toque para carregar a nova versão. A atualização não força recarregamentos enquanto você usa o app.
+- Instalação e service worker exigem HTTPS (ou localhost para desenvolvimento), e não funcionam abrindo o HTML via `file://`. Restrições de autenticação da hospedagem continuam valendo no primeiro acesso.
+
+Arquivos do app: `manifest.webmanifest`, `pwa.js`, `pwa.css`, `sw.js` e `assets/app/`. O manifesto usa caminhos relativos, incluindo instalação em subdiretórios.
+
+Após qualquer alteração em HTML, CSS, JavaScript ou assets, execute `python3 scripts/build-offline.py` antes de publicar. Isso gera automaticamente uma nova versão do cache. Edite a lógica do service worker em `scripts/sw-template.js`, não em `sw.js`.
+
+Verificação automatizada: `node --test tests/pwa.test.cjs` (Node 18+). Instalação real e comportamento visual devem ser conferidos em um celular após publicar.

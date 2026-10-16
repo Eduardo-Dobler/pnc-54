@@ -2,16 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#100b1a">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#100c18">
+  <meta name="application-name" content="PNC 54">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="PNC 54">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/app/apple-touch-icon.png">
   <meta name="description" content="Conheça o Partido Novo Caminho, PNC 54. Propostas para unir qualidade de vida e desenvolvimento em um projeto interdisciplinar.">
   <title>PNC 54 · Partido Novo Caminho</title>
   <link rel="icon" href="assets/favicon-cavalo.png" type="image/png" sizes="192x192">
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pwa.css">
   <link rel="preload" as="image" href="assets/people/candidato.webp">
   <script defer src="data.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="pwa.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -93,8 +100,9 @@
       <div class="contact-layout wrap"><div class="contact-info"><h2>Seu olhar importa.</h2><p>Conte o que pode melhorar na cidade. Sua experiência ajuda a fazer as perguntas certas.</p><div id="contact-channels"></div><div class="contact-tip glass"><span class="small-icon" aria-hidden="true">↗</span><div><h3>Uma ideia concreta vai mais longe.</h3><p>Descreva o problema, o bairro e a solução que você imagina. Não inclua informações pessoais sensíveis.</p></div></div><p class="contact-disclaimer">Este é um projeto escolar. Os canais oficiais serão informados pela equipe.</p></div><form id="contact-form" class="contact-form glass"><p class="eyebrow">FALE COM O PNC</p><h2>Compartilhe sua ideia.</h2><p class="form-mode" id="form-mode">Modo demonstração: você pode preparar e baixar sua mensagem. Não há envio para uma equipe.</p><div class="form-two"><label>Nome<input type="text" name="nome" autocomplete="name" required maxlength="100" placeholder="Como podemos chamar você?"></label><label>E-mail<input type="email" name="email" autocomplete="email" required maxlength="160" placeholder="voce@exemplo.com"></label></div><label>Bairro ou cidade <span class="optional">(opcional)</span><input type="text" name="bairro" autocomplete="address-level2" maxlength="120" placeholder="De onde vem sua ideia?"></label><label>Assunto<select name="assunto" required><option value="" disabled selected>Selecione um assunto</option><option>Moradia e segurança</option><option>Transporte público</option><option>Saneamento</option><option>Indústria e desenvolvimento</option><option>Educação, cultura e esporte</option><option>Participação no projeto</option><option>Outro assunto</option></select></label><label>Mensagem<textarea name="mensagem" required minlength="10" maxlength="3000" rows="5" placeholder="Conte sua ideia ou dúvida..."></textarea></label><button class="button button-gold" type="submit">Preparar mensagem <span aria-hidden="true">↗</span></button><p class="privacy-note">O formulário não salva seus dados no navegador nem os envia automaticamente.</p><div id="contact-result" class="form-result" role="status" hidden></div></form></div>
     </section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-main"><a class="brand" href="#inicio"><img src="assets/logo-pnc-cavalo.png" width="58" height="58" alt=""><span class="brand-name">PNC<span>PARTIDO NOVO CAMINHO</span></span><span class="brand-number">54</span></a><p>Gente em primeiro lugar.<br>Uma cidade com mais futuro.</p><a href="#contatos" class="text-link">Vamos construir juntos ↗</a></div><div class="wrap footer-bottom"><span>© 2026 PNC · Projeto interdisciplinar SENAC.</span><span>Partido fictício para fins educacionais.</span><button type="button" class="footer-link" id="credits-button">Créditos</button></div></footer>
+  <footer class="site-footer"><div class="wrap footer-main"><a class="brand" href="#inicio"><img src="assets/logo-pnc-cavalo.png" width="58" height="58" alt=""><span class="brand-name">PNC<span>PARTIDO NOVO CAMINHO</span></span><span class="brand-number">54</span></a><p>Gente em primeiro lugar.<br>Uma cidade com mais futuro.</p><a href="#contatos" class="text-link">Vamos construir juntos ↗</a></div><div class="wrap app-tools" aria-label="Aplicativo PNC"><button id="install-app" class="button button-quiet" type="button">Instalar app PNC 54 ↓</button><button id="update-app" class="button button-gold" type="button" hidden>Atualizar app</button><p id="app-status" role="status" aria-live="polite"></p></div><div class="wrap footer-bottom"><span>© 2026 PNC · Projeto interdisciplinar SENAC.</span><span>Partido fictício para fins educacionais.</span><button type="button" class="footer-link" id="credits-button">Créditos</button></div></footer>
   <dialog id="detail-dialog" class="detail-dialog"><button id="close-dialog" class="dialog-close icon-button" type="button" aria-label="Fechar janela">×</button><div id="dialog-content"></div></dialog>
+  <dialog id="install-dialog" class="detail-dialog" aria-labelledby="install-title"><button id="close-install" class="dialog-close icon-button" type="button" aria-label="Fechar instruções">×</button><img class="install-emblem" src="assets/app/icon-192.png" width="80" height="80" alt="Cavalo do PNC"><p class="eyebrow">PNC NO SEU CELULAR</p><h2 id="install-title">Um novo caminho.<br>Sempre com você.</h2><p id="install-hint"></p><p>O mesmo site, direto na tela inicial. Aguarde a mensagem “Pronto para consultar sem internet” antes de usar offline. Links externos precisam de conexão.</p></dialog>
   <noscript><p class="noscript-message">Ative o JavaScript para navegar pelas abas. As propostas também estão disponíveis no <a href="assets/propostas-pnc.docx">documento Word</a>.</p></noscript>
 </body>
 </html>

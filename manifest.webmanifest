@@ -1,0 +1,22 @@
+{
+  "id": "./",
+  "name": "Partido Novo Caminho — PNC 54",
+  "short_name": "PNC 54",
+  "description": "Propostas, integrantes e notícias do Partido Novo Caminho. Projeto interdisciplinar SENAC.",
+  "lang": "pt-BR",
+  "start_url": "./#inicio",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#100c18",
+  "theme_color": "#100c18",
+  "icons": [
+    { "src": "assets/app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/app/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Integrantes", "url": "./#integrantes" },
+    { "name": "Propostas do PNC", "url": "./#sobre/programa" },
+    { "name": "Notícias", "url": "./#noticias" }
+  ]
+}

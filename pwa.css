@@ -1,0 +1,14 @@
+/* A mesma interface responsiva, com instalação e áreas seguras do celular. */
+.app-tools{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;padding-block:18px;border-top:1px solid #ffffff12}
+.app-tools [hidden]{display:none!important}
+.app-tools .button{min-height:44px;font-size:12px}
+.app-tools p{font-size:11px;color:var(--muted);margin:0}
+.install-emblem{display:block;width:80px;height:80px;border-radius:20px;margin-bottom:22px}
+#install-dialog{max-width:480px}
+#install-dialog h2{font-size:30px}
+#install-dialog p{line-height:1.8}
+.site-header{padding-top:env(safe-area-inset-top,0px)}
+body{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.site-footer{padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(display-mode:standalone){html{overscroll-behavior-y:none}.detail-dialog{max-height:calc(90dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}}
+@media(max-width:540px){.contact-form input,.contact-form select,.contact-form textarea,.search-box input{font-size:16px}.app-tools{align-items:flex-start;flex-direction:column}.app-tools .button{width:100%;justify-content:center}#install-dialog{width:calc(100% - 32px)}}
