@@ -75,7 +75,8 @@ O carrossel possui controles, indicadores, pausa, teclado e gesto horizontal. A 
 
 ## Fontes e créditos
 
-- Logo e propostas: anexos fornecidos pelo usuário.
+- Logo: emblema de cavalo dourado, roxo e branco fornecido pelo usuário, em `assets/logo-pnc-cavalo.png`. O ícone da aba em `assets/favicon-cavalo.png` é derivado dessa imagem.
+- Propostas: documento Word fornecido pelo usuário.
 - Retratos do candidato, integrantes e foto coletiva: 12 imagens fornecidas pela equipe do projeto.
 - Fotografias de ambientação: Unsplash, arquivos disponíveis em `assets`.
 - Fonte Manrope: Google Fonts. Licença SIL Open Font License incluída em `assets/OFL-Manrope.txt`.

@@ -9,7 +9,7 @@
   const titleHTML = value => escapeHTML(value).replace(/&lt;br\s*\/?&gt;/gi, '<br>').replace(/&lt;(\/?)em&gt;/gi, '<$1em>');
   const textTitle = value => String(value).replace(/<br\s*\/?\s*>/gi, ' ').replace(/<\/?em>/gi, '');
   const normalized = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const safeAsset = value => /^assets\/[a-zA-Z0-9_./-]+$/.test(value) && !value.includes('..') ? value : 'assets/logo-pnc.png';
+  const safeAsset = value => /^assets\/[a-zA-Z0-9_./-]+$/.test(value) && !value.includes('..') ? value : 'assets/logo-pnc-cavalo.png';
   const safePercent = value => /^\d+(\.\d+)?%$/.test(value) ? value : '50%';
   const iconPaths = {
     home: '<path d="m3 10 9-7 9 7v10H3Z"></path><path d="M9 20v-7h6v7"></path>',
