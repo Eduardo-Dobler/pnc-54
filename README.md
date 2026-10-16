@@ -30,7 +30,7 @@ Os oito retratos da equipe seguem a ordem informada: Matheus Vanin (Presidente),
 
 Cada perfil tem uma frase de destaque no cartão e uma apresentação completa na janela de detalhes, redigidas a partir da função informada. Para editar, ajuste `nome`, `cargo`, `area`, `resumo` e `bio` na lista `integrantes` de `data.js`.
 
-A foto coletiva aparece no carrossel e na apresentação da equipe. Os retratos com bebê e na praia foram retirados da seção Integrantes conforme solicitado. As imagens são versões WebP otimizadas; miniaturas menores são usadas nos cartões. Os arquivos originais enviados não foram alterados.
+A foto coletiva aparece no carrossel e na apresentação da equipe. A versão atual, `assets/people/equipe-cavalo.webp`, tem o emblema de cavalo na bandeira; a antiga `equipe.webp` foi removida. A edição foi feita com a ferramenta nativa de imagem, preservando a composição da fotografia. As instruções completas estão em `image-edits/equipe-cavalo.txt`. Os retratos com bebê e na praia foram retirados da seção Integrantes conforme solicitado. As imagens são versões WebP otimizadas; miniaturas menores são usadas nos cartões. Os arquivos originais enviados não foram alterados.
 
 Para trocar um retrato, ajuste `avatar` (imagem completa), `miniatura` (cartão), `x` e `y` (posição do enquadramento, em porcentagem). As fotos ficam em `assets/people/`.
 
